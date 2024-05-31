@@ -1,0 +1,47 @@
+/* Custom CSS for transitions */
+.navbar {
+    background-color: black;
+}
+
+.navbar-brand img {
+    height: 40px;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    position: relative;
+}
+
+.navbar-nav .nav-link.transition::before, 
+.navbar-nav .nav-link.transition::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+.navbar-nav .nav-link.transition::before {
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+}
+
+.navbar-nav .nav-link.transition::after {
+    bottom: 0;
+    right: 0;
+    transform: scaleX(0);
+}
+
+.navbar-nav .nav-link.transition:hover::before,
+.navbar-nav .nav-link.transition:hover::after {
+    transform: scaleX(1);
+}
+
+.main-img {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    object-fit: cover;
+}
